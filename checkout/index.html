@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+     <!-- Utimfy Pixel Code -->
+
+<script>
+  window.pixelId = "69f3308425c7d3cc4f8da0a2";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+
+  <!-- End Utimfy Pixel Code -->
+
+  <!-- UTMIFY SCRIPT -->
+  <script
+    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+    data-utmify-prevent-xcod-sck
+    data-utmify-prevent-subids
+    async
+    defer
+  ></script>
+  <!-- END UTMIFY -->
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marketplace Checkout</title>
+  <style>
+    :root{
+      --bg:#f3f5f7;
+      --surface:#ffffff;
+      --surface-2:#f8fafc;
+      --text:#111827;
+      --muted:#6b7280;
+      --border:#e5e7eb;
+      --primary:#39c40a;
+      --primary-dark:#2fa205;
+      --shadow:0 14px 40px rgba(15,23,42,.08);
+      --radius:18px;
+      --container:760px;
+    }
+
+    *{
+      box-sizing:border-box;
+      -webkit-tap-highlight-color:transparent;
+    }
+
+    html{
+      font-size:16px;
+      width:100%;
+      overflow-x:hidden;
+    }
+
+    body{
+      margin:0;
+      width:100%;
+      overflow-x:hidden;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top, rgba(57,196,10,.07), transparent 24%),
+        var(--bg);
+      line-height:1.45;
+    }
+
+    img{
+      display:block;
+      max-width:100%;
+      height:auto;
+    }
+
+    button,
+    input,
+    select,
+    a{
+      font:inherit;
+    }
+
+    .page{
+      width:100%;
+      min-height:100vh;
+      padding:16px 12px 28px;
+    }
+
+    .container{
+      width:100%;
+      max-width:var(--container);
+      margin:0 auto;
+    }
+
+    .topbar{
+      width:100%;
+      background:rgba(255,255,255,.96);
+      border:1px solid rgba(229,231,235,.95);
+      border-radius:20px;
+      box-shadow:0 8px 26px rgba(15,23,42,.04);
+      padding:16px 14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:16px;
+    }
+
+    .logo-img{
+      width:auto;
+      max-width:min(170px, 55vw);
+      max-height:46px;
+      object-fit:contain;
+    }
+
+    .card{
+      width:100%;
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:22px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .card-header{
+      padding:20px 16px 18px;
+      border-bottom:1px solid var(--border);
+      background:linear-gradient(180deg,#fff,#fbfcfd);
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:.75rem;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--primary-dark);
+      margin-bottom:8px;
+    }
+
+    .card-title{
+      margin:0 0 6px;
+      font-size:1.5rem;
+      line-height:1.15;
+    }
+
+    .card-subtitle{
+      margin:0;
+      font-size:.94rem;
+      color:var(--muted);
+    }
+
+    .section{
+      padding:18px 16px 20px;
+    }
+
+    .section-title{
+      margin:0 0 16px;
+      font-size:1rem;
+      font-weight:700;
+    }
+
+    .fields{
+      display:grid;
+      gap:14px;
+    }
+
+    .field{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      min-width:0;
+    }
+
+    .field label{
+      font-size:.86rem;
+      font-weight:700;
+      color:var(--text);
+    }
+
+    .field label.muted{
+      color:var(--muted);
+    }
+
+    .field input,
+    .field select{
+      width:100%;
+      min-width:0;
+      height:52px;
+      border:1px solid var(--border);
+      border-radius:14px;
+      background:#fff;
+      color:var(--text);
+      padding:0 14px;
+      font-size:1rem;
+      outline:none;
+      appearance:none;
+      transition:border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .field input::placeholder{
+      color:#9ca3af;
+    }
+
+    .field input:focus,
+    .field select:focus{
+      border-color:rgba(57,196,10,.55);
+      box-shadow:0 0 0 4px rgba(57,196,10,.12);
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+    }
+
+    .save-btn,
+    .pay-btn{
+      width:100%;
+      min-height:54px;
+      border:none;
+      border-radius:999px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      font-size:1rem;
+      font-weight:700;
+      cursor:pointer;
+      transition:transform .18s ease, opacity .18s ease, box-shadow .18s ease;
+    }
+
+    .save-btn{
+      background:linear-gradient(180deg, #3dcf0c, #30ab06);
+      color:#fff;
+      margin-top:6px;
+      box-shadow:0 12px 24px rgba(57,196,10,.22);
+    }
+
+    .pay-btn{
+      background:#111827;
+      color:#fff;
+      box-shadow:0 12px 24px rgba(17,24,39,.16);
+    }
+
+    .save-btn:hover,
+    .pay-btn:hover{
+      opacity:.98;
+    }
+
+    .save-btn:active,
+    .pay-btn:active{
+      transform:scale(.99);
+    }
+
+    .overlay{
+      position:fixed;
+      inset:0;
+      display:none;
+      align-items:flex-end;
+      justify-content:center;
+      padding:0;
+      background:rgba(15,23,42,.62);
+      z-index:999;
+      backdrop-filter:blur(4px);
+    }
+
+    .overlay.show{
+      display:flex;
+    }
+
+    .modal{
+      width:100%;
+      max-width:100%;
+      background:var(--surface);
+      border-radius:22px 22px 0 0;
+      border:1px solid rgba(229,231,235,.95);
+      box-shadow:0 -20px 60px rgba(15,23,42,.28);
+      max-height:92vh;
+      overflow:hidden;
+      animation:sheetIn .22s ease;
+      display:flex;
+      flex-direction:column;
+    }
+
+    @keyframes sheetIn{
+      from{opacity:0; transform:translateY(20px);}
+      to{opacity:1; transform:translateY(0);}
+    }
+
+    .modal-head{
+      position:sticky;
+      top:0;
+      z-index:5;
+      background:#fff;
+      border-bottom:1px solid var(--border);
+      padding:18px 52px 18px 16px;
+      text-align:center;
+      font-size:1.08rem;
+      font-weight:700;
+      flex-shrink:0;
+    }
+
+    .close-btn{
+      position:absolute;
+      top:10px;
+      right:12px;
+      width:38px;
+      height:38px;
+      border:none;
+      border-radius:50%;
+      background:#f3f4f6;
+      color:#4b5563;
+      font-size:1.35rem;
+      cursor:pointer;
+    }
+
+    .panel{
+      padding:16px 16px 110px;
+      overflow:auto;
+      flex:1 1 auto;
+    }
+
+    .product-media{
+      background:var(--surface-2);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:16px;
+      margin-bottom:16px;
+    }
+
+    .product-img{
+      width:100%;
+      max-width:220px;
+      margin:0 auto;
+      object-fit:contain;
+    }
+
+    .product-name{
+      font-size:1rem;
+      font-weight:700;
+      line-height:1.5;
+      margin-bottom:6px;
+      word-break:break-word;
+    }
+
+    .brand-row{
+      font-size:.86rem;
+      color:var(--muted);
+      margin-bottom:14px;
+    }
+
+    .summary-list{
+      display:grid;
+      gap:12px;
+    }
+
+    .row{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:14px;
+      font-size:.95rem;
+    }
+
+    .row span:first-child{
+      color:var(--muted);
+    }
+
+    .row span:last-child,
+    .price{
+      font-weight:700;
+      color:#111827;
+      text-align:right;
+    }
+
+    .line{
+      border-top:1px solid var(--border);
+    }
+
+    .address-box{
+      margin-top:16px;
+      padding:15px;
+      background:var(--surface-2);
+      border:1px solid var(--border);
+      border-radius:16px;
+    }
+
+    .address-title{
+      margin:0 0 8px;
+      font-size:.92rem;
+      font-weight:700;
+    }
+
+    .address-text{
+      font-size:.85rem;
+      color:var(--muted);
+      line-height:1.7;
+      word-break:break-word;
+    }
+
+    .total{
+      margin-top:16px;
+      padding:16px;
+      border:1px solid var(--border);
+      border-radius:16px;
+      background:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+
+    .total strong:first-child{
+      font-size:.9rem;
+      letter-spacing:.05em;
+    }
+
+    .total .price{
+      font-size:1.45rem;
+    }
+
+    .helper{
+      margin-top:12px;
+      text-align:center;
+      font-size:.78rem;
+      color:var(--muted);
+      line-height:1.55;
+    }
+
+    .modal-footer{
+      position:sticky;
+      bottom:0;
+      z-index:6;
+      flex-shrink:0;
+      background:rgba(255,255,255,.96);
+      border-top:1px solid var(--border);
+      box-shadow:0 -10px 24px rgba(15,23,42,.08);
+      padding:12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+      backdrop-filter:blur(10px);
+    }
+
+    .footer-total{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:10px;
+      font-size:.9rem;
+      color:var(--muted);
+    }
+
+    .footer-total strong{
+      color:var(--text);
+    }
+
+    @media (min-width: 640px){
+      .page{
+        padding:22px 18px 34px;
+      }
+
+      .topbar{
+        padding:18px 20px;
+        margin-bottom:20px;
+      }
+
+      .card-header{
+        padding:24px 22px 20px;
+      }
+
+      .section{
+        padding:22px;
+      }
+
+      .grid-2{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .modal{
+        max-width:620px;
+        border-radius:24px;
+        margin:18px;
+        max-height:88vh;
+      }
+
+      .overlay{
+        align-items:center;
+        padding:16px;
+      }
+
+      .panel{
+        padding:20px 20px 118px;
+      }
+
+      .modal-head{
+        padding-left:20px;
+        padding-right:56px;
+      }
+
+      .modal-footer{
+        padding:14px 20px;
+      }
+    }
+
+    @media (min-width: 992px){
+      .card-header{
+        padding:28px 28px 22px;
+      }
+
+      .section{
+        padding:26px 28px 28px;
+      }
+
+      .card-title{
+        font-size:1.8rem;
+      }
+
+      .modal{
+        max-width:680px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="container">
+      <div class="topbar">
+        <img src="logo-takealot.svg" alt="Logo" class="logo-takealot" />
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="eyebrow">Secure checkout</div>
+          <h1 class="card-title">Delivery Details</h1>
+          <p class="card-subtitle">Fill in your information carefully to complete your order without delays.</p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">Customer information</h2>
+
+          <div class="fields">
+            <div class="field">
+              <label for="name">Recipient Name</label>
+              <input id="name" type="text" placeholder="Enter recipient name" />
+            </div>
+
+            <div class="field">
+              <label for="phone">Recipient Mobile Number</label>
+              <input id="phone" type="tel" inputmode="tel" placeholder="e.g. +27 ..." />
+            </div>
+
+            <div class="field">
+              <label for="address">Street Address</label>
+              <input id="address" type="text" placeholder="Enter street address" />
+            </div>
+
+            <div class="field">
+              <label for="building" class="muted">Complex / Building (Optional)</label>
+              <input id="building" type="text" placeholder="Building name / unit" />
+            </div>
+
+            <div class="grid-2">
+              <div class="field">
+                <label for="suburb">Suburb</label>
+                <input id="suburb" type="text" placeholder="Suburb" />
+              </div>
+
+              <div class="field">
+                <label for="city">City / Town</label>
+                <input id="city" type="text" placeholder="City" />
+              </div>
+            </div>
+
+            <div class="grid-2">
+              <div class="field">
+                <label for="province">Province</label>
+                <select id="province">
+                  <option value="">Select Province</option>
+                  <option>Gauteng</option>
+                  <option>Limpopo</option>
+                  <option>Mpumalanga</option>
+                  <option>KwaZulu-Natal</option>
+                  <option>Western Cape</option>
+                  <option>Eastern Cape</option>
+                  <option>North West</option>
+                  <option>Free State</option>
+                  <option>Northern Cape</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="postal">Postal Code</label>
+                <input id="postal" type="text" inputmode="numeric" placeholder="Postal code" />
+              </div>
+            </div>
+
+            <button class="save-btn" id="save" type="button">Save and review order</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay" id="popup" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="summaryTitle">
+      <div class="modal-head" id="summaryTitle">
+        Order Summary
+        <button class="close-btn" id="close" aria-label="Close">&times;</button>
+      </div>
+
+      <div class="panel">
+        <div class="product-media">
+          <img src="p1.png" alt="Product" class="p1" />
+        </div>
+
+        <div class="product-name">
+          Russell Hobbs 3-Piece Appliance Bundle – 20L Microwave, Cordless Stainless Steel Kettle & 9L Digital Air Fryer
+
+        </div>
+        <div class="brand-row">Russell Hobbs</div>
+
+        <div class="summary-list">
+          <div class="row">
+            <span>Quantity</span>
+            <span>1</span>
+          </div>
+          <div class="line"></div>
+          <div class="row">
+            <span>Subtotal</span>
+            <span class="price">R 599.00</span>
+          </div>
+        </div>
+
+        <div class="address-box">
+          <div class="address-title">Delivery Address</div>
+          <div class="address-text" id="previewAddress">Province: Select Province</div>
+        </div>
+
+        <div class="total">
+          <strong>TOTAL</strong>
+          <strong class="price">R 599.00</strong>
+        </div>
+
+        <div class="helper">Your details are used only to complete delivery and payment.</div>
+      </div>
+
+      <div class="modal-footer">
+        <div class="footer-total">
+          <span>Total</span>
+          <strong>R 599.00</strong>
+        </div>
+        <a href="https://app.quorapay.online/pay/04d036d2-4b79-4381-b874-f60246421fd5" class="pay-btn">Proceed to payment</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const saveButton = document.getElementById("save");
+    const popup = document.getElementById("popup");
+    const closeButton = document.getElementById("close");
+    const previewAddress = document.getElementById("previewAddress");
+
+    function buildAddressPreview() {
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const address = document.getElementById("address").value.trim();
+      const building = document.getElementById("building").value.trim();
+      const suburb = document.getElementById("suburb").value.trim();
+      const city = document.getElementById("city").value.trim();
+      const province = document.getElementById("province").value;
+      const postal = document.getElementById("postal").value.trim();
+
+      return `
+        ${name || "."}<br>
+        ${phone || "."}<br>
+        ${address || "."}${building ? ", " + building : ""}<br>
+        ${suburb || "."}${city ? ", " + city : ""}<br>
+        Province: ${province || "Select Province"}${postal ? " | " + postal : ""}
+      `;
+    }
+
+    function openPopup() {
+      previewAddress.innerHTML = buildAddressPreview();
+      popup.classList.add("show");
+      popup.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closePopup() {
+      popup.classList.remove("show");
+      popup.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    saveButton.addEventListener("click", openPopup);
+    closeButton.addEventListener("click", closePopup);
+
+    popup.addEventListener("click", function (e) {
+      if (e.target === popup) closePopup();
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && popup.classList.contains("show")) closePopup();
+    });
+  </script>
+</body>
+</html>
